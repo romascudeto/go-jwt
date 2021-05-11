@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/jinzhu/gorm"
 )
@@ -19,11 +20,11 @@ type DBConfig struct {
 
 func BuildDBConfig() *DBConfig {
 	dbConfig := DBConfig{
-		Host:     "localhost",
+		Host:     os.Getenv("DB_HOST"),
 		Port:     3306,
-		User:     "root",
-		Password: "root",
-		DBName:   "go",
+		User:     os.Getenv("DB_USER"),
+		Password: os.Getenv("DB_PASS"),
+		DBName:   os.Getenv("DB_NAME"),
 	}
 	return &dbConfig
 }
