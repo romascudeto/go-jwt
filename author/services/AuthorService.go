@@ -5,7 +5,6 @@ import (
 	"go-jwt/author/helpers"
 	"go-jwt/author/models"
 	"go-jwt/author/repositories"
-	"log"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -58,6 +57,5 @@ func LoginAuthor(author models.Author) (token string, err error) {
 	mySigningKey := []byte("secret")
 
 	tokenString, _ := tokenClaim.SignedString(mySigningKey)
-	log.Println(tokenString)
 	return tokenString, nil
 }
