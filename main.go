@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-jwt/article"
+	"go-jwt/author"
 	Config "go-jwt/config"
 
 	"github.com/gin-gonic/gin"
@@ -25,6 +26,7 @@ func main() {
 
 	r := gin.Default()
 	article.Routes(r)
+	author.Routes(r)
 
 	r.Run(":8088") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }

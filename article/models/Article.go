@@ -1,6 +1,10 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type Article struct {
 	ID        int64     `json:"id" gorm:"primaryKey"`
@@ -8,7 +12,7 @@ type Article struct {
 	Content   string    `json:"content"`
 	UpdatedAt time.Time `json:"updated_at"`
 	CreatedAt time.Time `json:"created_at"`
-	DeletedAt time.Time
+	DeletedAt gorm.DeletedAt
 }
 
 func (b *Article) TableName() string {
