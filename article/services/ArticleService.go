@@ -19,3 +19,13 @@ func CreateArticle(article models.Article) (dataRet models.Article, err error) {
 	err = repositories.Create(&article)
 	return article, err
 }
+
+func UpdateArticle(article models.Article) (dataRet models.Article, err error) {
+	err = repositories.Update(&article)
+	return article, err
+}
+
+func DeleteArticle(article models.Article) (dataRet models.Article, err error) {
+	err = repositories.Delete(&article)
+	return article, err
+}

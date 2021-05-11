@@ -8,6 +8,7 @@ type Article struct {
 	Content   string    `json:"content"`
 	UpdatedAt time.Time `json:"updated_at"`
 	CreatedAt time.Time `json:"created_at"`
+	DeletedAt time.Time
 }
 
 func (b *Article) TableName() string {

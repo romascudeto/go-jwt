@@ -30,3 +30,20 @@ func Create(article *models.Article) (err error) {
 	}
 	return nil
 }
+
+func Update(article *models.Article) (err error) {
+	if err = Config.DB.Model(&article).Updates(article).Error; err != nil {
+		return err
+	}
+	return nil
+}
+
+func Delete(article *models.Article) (err error) {
+	if err = Config.DB.Where("id = ?", article.ID).First(article).Error; err != nil {
+		return err
+	}
+	if err = Config.DB.Delete(article).Error; err != nil {
+		return err
+	}
+	return nil
+}

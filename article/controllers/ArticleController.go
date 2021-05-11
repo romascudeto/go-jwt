@@ -51,3 +51,33 @@ func CreateArticle(c *gin.Context) {
 		})
 	}
 }
+
+//UpdateArticle ... Update article
+func UpdateArticle(c *gin.Context) {
+	var dataArticle models.Article
+	c.BindJSON(&dataArticle)
+	updatedData, err := services.UpdateArticle(dataArticle)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(200, gin.H{
+			"status": "success",
+			"data":   updatedData,
+		})
+	}
+}
+
+//DeleteArticle ... Delete article
+func DeleteArticle(c *gin.Context) {
+	var dataArticle models.Article
+	c.BindJSON(&dataArticle)
+	deletedData, err := services.DeleteArticle(dataArticle)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(200, gin.H{
+			"status": "success",
+			"data":   deletedData,
+		})
+	}
+}
