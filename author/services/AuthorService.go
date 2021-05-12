@@ -3,8 +3,8 @@ package services
 import (
 	"errors"
 	"go-jwt/author/helpers"
-	"go-jwt/author/models"
 	"go-jwt/author/repositories"
+	"go-jwt/models"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"

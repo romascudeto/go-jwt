@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"go-jwt/author/models"
 	"go-jwt/author/services"
+	"go-jwt/models"
 	"net/http"
 	"strconv"
 

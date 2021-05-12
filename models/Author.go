@@ -14,6 +14,7 @@ type Author struct {
 	UpdatedAt time.Time      `json:"updated_at"`
 	CreatedAt time.Time      `json:"created_at"`
 	DeletedAt gorm.DeletedAt `json:"deleted_at"`
+	Articles  []Article      `json:"articles"`
 }
 
 func (b *Author) TableName() string {

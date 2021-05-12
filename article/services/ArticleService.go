@@ -1,8 +1,8 @@
 package services
 
 import (
-	"go-jwt/article/models"
 	"go-jwt/article/repositories"
+	"go-jwt/models"
 )
 
 func ListArticle() (dataRet []models.Article, err error) {

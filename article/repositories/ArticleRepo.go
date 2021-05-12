@@ -1,15 +1,15 @@
 package repositories
 
 import (
-	"go-jwt/article/models"
 	Config "go-jwt/config"
+	"go-jwt/models"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func Fetch(articles *[]models.Article) (err error) {
 
-	if err = Config.DB.Find(articles).Error; err != nil {
+	if err = Config.DB.Debug().Preload("Author").Find(articles).Error; err != nil {
 		return err
 	}
 	return nil
